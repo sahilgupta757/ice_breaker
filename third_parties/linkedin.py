@@ -28,13 +28,13 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
             endpoint, params={"url": linkedin_profile_url}, headers=headers, timeout=10
         )
 
-    return response
+    return {k: v for k, v in response.json().items() if v}
 
 
 if __name__ == "__main__":
     print(
         scrape_linkedin_profile(
             "https://www.linkedin.com/in/anthony-ndou/",
-            mock=True
+            mock=True,
         )
     )
