@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+langchain = "*"
+langchain-openai = "*"
+black = "*"
+load-dotenv = "*"
+langchain-google-genai = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
