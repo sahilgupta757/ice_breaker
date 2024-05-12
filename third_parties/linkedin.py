@@ -22,7 +22,7 @@ def scrape_linkedin_profile(
     """
 
     if mock:
-        linkedin_profile_url = "https://gist.githubusercontent.com/sahilgupta757/67765d447fdd89e04c10029bd207ef2b/raw/1a9639ff9771cbb455e58428fd2e905bdd143389/ice-breaker.json"
+        linkedin_profile_url = "https://gist.githubusercontent.com/sahilgupta757/67765d447fdd89e04c10029bd207ef2b/raw/bd67d14b7066986a39faea56b73bdd187c9b65ad/ice-breaker.json"
 
         response = requests.get(
             linkedin_profile_url,

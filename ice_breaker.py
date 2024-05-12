@@ -1,17 +1,18 @@
 import os
 
 from dotenv import load_dotenv
-from pprint import pprint
+from typing import Tuple
+
 from langchain.chains import LLMChain
 from langchain.prompts.prompt import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from agents.linkedin_lookup_agent import lookup
 from third_parties.linkedin import scrape_linkedin_profile
-from output_parsers import summary_parser
+from output_parsers import summary_parser, Summary
 
 
-def ice_break_with(name: str) -> str:
+def ice_break_with(name: str) -> Tuple[Summary, str]:
     """
     Ice break with a person
     """
@@ -38,8 +39,9 @@ def ice_break_with(name: str) -> str:
 
     # chain = LLMChain(llm=llm, prompt=summary_prompt_template)
     chain = summary_prompt_template | llm | summary_parser
-    res = chain.invoke(input={"information": linkedin_data})
-    pprint(res)
+    res:Summary = chain.invoke(input={"information": linkedin_data})
+
+    return res, linkedin_data.get("profile_pic_url")
 
 
 if __name__ == "__main__":

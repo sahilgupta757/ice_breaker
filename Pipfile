@@ -10,6 +10,7 @@ black = "*"
 load-dotenv = "*"
 langchain-google-genai = "*"
 langchainhub = "*"
+flask = "*"
 
 [dev-packages]
 
