@@ -9,6 +9,7 @@ langchain-openai = "*"
 black = "*"
 load-dotenv = "*"
 langchain-google-genai = "*"
+langchainhub = "*"
 
 [dev-packages]
 

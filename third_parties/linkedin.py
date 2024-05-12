@@ -6,9 +6,19 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
+def scrape_linkedin_profile(
+    linkedin_profile_url: str,
+    mock: bool = False,
+) -> dict:
     """
     scrape linkedin information
+
+    Args:
+        linkedin_profile_url (str): linkedin profile url
+        mock (bool, optional): set to True to mock response
+
+    Returns:
+        dict: linkedin information
     """
 
     if mock:
